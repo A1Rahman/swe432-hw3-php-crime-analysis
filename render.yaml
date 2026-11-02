@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: swe432-hw3          # becomes https://swe432-hw3.onrender.com (change if taken)
+    runtime: docker
+    plan: free
+    healthCheckPath: /

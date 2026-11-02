@@ -1,0 +1,18 @@
+body {
+  font-family: Arial, sans-serif;
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 0 16px;
+  line-height: 1.5;
+  color: #1a1818;
+}
+h1 { font-size: 1.6rem; }
+.upload-area { margin: 20px 0; padding: 12px; border: 1px solid #ccc; }
+button { margin-left: 8px; padding: 4px 14px; cursor: pointer; }
+#error { color: #b00020; font-weight: bold; }
+.results-list > li { margin: 16px 0; }
+.results-list p { margin: 6px 0; }
+ul { margin-top: 6px; }
+#processing-info { margin-top: 28px; padding: 12px; border: 1px solid #ccc; background: #f7f7f7; }
+#processing-info h2 { font-size: 1.2rem; margin-top: 0; }
+#processing-info p { margin: 4px 0; }
