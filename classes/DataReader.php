@@ -71,16 +71,20 @@ class DataReader
             throw new DatasetException("Invalid dataset: expected a GeoJSON object with a \"features\" array.");
         }
 
-        $features = $data["features"];
+        // array_values guarantees a 0,1,2... index so the for loop below is safe.
+        $features = array_values($data["features"]);
 
         if (count($features) === 0) {
             throw new DatasetException("The dataset contains no records.");
         }
 
-        // Every record needs a "properties" object.
-        foreach ($features as $index => $feature) {
+        // Every record needs a "properties" object (classic for loop with an index).
+        $total = count($features);
+        for ($i = 0; $i < $total; $i++) {
+            $feature = $features[$i];
+
             if (!is_array($feature) || !isset($feature["properties"]) || !is_array($feature["properties"])) {
-                $row = $index + 1;
+                $row = $i + 1;
                 throw new DatasetException("Record #{$row} has no \"properties\" object.");
             }
         }
